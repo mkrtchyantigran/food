@@ -11,7 +11,7 @@ window.addEventListener("DOMContentLoaded", function () {
   function hideTabContentsAndActiveClass() {
     for (let i = 0; i < tabContents.length; i++) {
       tabContents[i].classList.remove("show", "fade")
-      tabContents[i].classList.add("hide", )
+      tabContents[i].classList.add("hide",)
       tabHeaders[i].classList.remove("tabheader__item_active");
     }
   }
@@ -28,7 +28,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
   // event delegation
   tabHeaderParrent.addEventListener("click", (e) => {
-    
+
     if (e.target && e.target.matches(".tabheader__item")) {
       for (let i = 0; i < tabContents.length; i++) {
         if (e.target == tabHeaders[i]) {
@@ -42,15 +42,15 @@ window.addEventListener("DOMContentLoaded", function () {
   // tabs end
 
   // timer start
-   const endTime = "2025-11-31 13:59:59 "
+  const endTime = "2025-11-31 13:59:59 "
 
-   function getTimeRemaining (endTime) {
+  function getTimeRemaining(endTime) {
     const total = Date.parse(endTime) - Date.parse(new Date());
     let days, hours, minutes, seconds;
 
     if (total <= 0) {
-      days  = 0;
-      hours  = 0;
+      days = 0;
+      hours = 0;
       minutes = 0;
       seconds = 0;
     } else {
@@ -62,13 +62,13 @@ window.addEventListener("DOMContentLoaded", function () {
     }
 
     return { total, days, hours, minutes, seconds }
-   }
+  }
 
-   function setZero(n) {
+  function setZero(n) {
     return n >= 0 && n < 10 ? `0${n}` : n;
-   }
+  }
 
-   function setClock (selector, endTime ) {
+  function setClock(selector, endTime) {
     const timer = document.querySelector(selector);
     const daysElem = timer.querySelector("#days");
     const hoursElem = timer.querySelector("#hours");
@@ -88,14 +88,55 @@ window.addEventListener("DOMContentLoaded", function () {
       secondsElem.textContent = setZero(seconds);
 
       if (total <= 0) clearInterval(timeInterval)
-      
 
     }
-   }
+  }
 
-   setClock(".timer", endTime)
+  setClock(".timer", endTime)
 
   //timer end
+
+
+  // modal start
+
+  const openModalTriggers = document.querySelectorAll("[data-modal-open]");
+  const closeModalTrigger = document.querySelector("[data-modal-close]");
+  const modal = document.querySelector(".modal");
+
+  if (!modal.matches(".hidden") && !modal.matches(".show")) {
+    modal.classList.add("hidden")
+  }
+  openModalTriggers.forEach(trigger => {
+    trigger.addEventListener("click", () => {
+      if (modal.classList.contains("hidden")) {
+        modal.classList.remove("hidden");
+        modal.classList.add("show")
+        document.body.style.overflow = "hidden"
+      }
+    })
+  })
+
+  function closeModal () {
+      if (modal.classList.contains("show")) {
+      modal.classList.add("hidden");
+      modal.classList.remove("show")
+      document.body.style.overflow = "auto"
+    }
+  }
+
+  closeModalTrigger.addEventListener("click", () => {
+    if (modal.classList.contains("show")) closeModal();
+  });
+
+  modal.addEventListener("click", (e) => {
+    if (e.target && e.target === modal) closeModal();
+  })
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === 'Escape' && modal.matches(".show")) closeModal();
+  })
+
+  // modal end
 });
 
 // tabheader__item_active
