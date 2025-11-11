@@ -1,0 +1,29 @@
+[33mcommit 41df21c0256f1a1ba26a166a065cd10974ab7119[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m
+Author: mkrtchyantigran <tigran.mkrtchyan1@outlook.com>
+Date:   Wed Nov 5 00:40:36 2025 +0100
+
+    added data attributes modal open and close triggers
+
+[33mcommit d3089584e7eb9f75623f5f02c4c6a8348cede630[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: mkrtchyantigran <tigran.mkrtchyan1@outlook.com>
+Date:   Sat Nov 1 17:39:57 2025 +0100
+
+    set comments block start/end and created timer logic
+
+[33mcommit 0472a3fb4f203c6666f3a53181e9e4e38bfa2161[m
+Author: mkrtchyantigran <tigran.mkrtchyan1@outlook.com>
+Date:   Sat Oct 25 20:24:04 2025 +0200
+
+    added animatino in css and replaced inline styles with classList in JS
+
+[33mcommit 92a29234e4b7f3d8e71016f669fe653f4abd5c30[m
+Author: mkrtchyantigran <tigran.mkrtchyan1@outlook.com>
+Date:   Sat Oct 25 19:54:41 2025 +0200
+
+    created js file and changed html. Created tab logic with show/hide functions and used event delegation
+
+[33mcommit 6aad8aac63291bcd537f435a3ae8349eaa0c2867[m
+Author: mkrtchyantigran <tigran.mkrtchyan1@outlook.com>
+Date:   Wed Oct 22 00:45:39 2025 +0200
+
+    initial commit
